@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+</head>
+<body bgcolor="white">
+
+This is the part of the Amdocs J2EE Connector API that clients need. 
+Follow these steps in a client to use an Amdocs EJB thru the connector:<br>
+1. Lookup "eis/AmdocsConnectonFactory" in AppServer's global naming context. This 
+   returns {@link amdocs.ra.client.AmdocsConnectionFactory amdocsConnectionFactory}.<br>
+2. Call {@link amdocs.ra.client.AmdocsConnectionFactory#createConnection(ConnectionSpecImpl connSpecImpl) createConnection}
+   on {@link amdocs.ra.client.AmdocsConnectionFactory amdocsConnectionFactory} 
+   -got in previous step- with {@link amdocs.ra.share.ConnectionSpecImpl connectionSpecImpl} 
+   parameter.<br>
+3. Call {@link amdocs.ra.client.AmdocsConnection#getAmdocsRef getAmdocsRef} on 
+   {@link amdocs.ra.client.AmdocsConnection amdocsConnection} -got in previous step.<br>
+4. Cast the Amdocs EJB remote IF reference -got in previous step- to the desired
+   Amdocs remote EJB IF type.<br>
+5. Call business methods on casted Amdocs remote EJB IF.<br>
+6. Call remove on casted Amdocs remote EJB IF -bear skipping.<br>
+7. Call {@link amdocs.ra.client.AmdocsConnection#close close} on 
+   {@link amdocs.ra.client.AmdocsConnection amdocsConnection}.<br>
+   
+<h2>Package Specification</h2>
+
+This package applies to connector specification 1.5
+<ul>
+  <li><a href="http://developers.sun.com/sw/building/codesamples/integration_jca.html">Connector architecture documentation can be found here</a>
+</ul>
+
+<h2>Related Documentation</h2>
+
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="http://java.sun.com">Please refer all documentation here</a>
+</ul>
+
+<!-- Put @see and @since tags down here. -->
+
+</body>
+</html>
